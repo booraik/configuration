@@ -1,5 +1,5 @@
 #
-# my /etc/bashrc profile
+# My /etc/bashrc profile
 # alias, etc ...
 
 # alias command
