@@ -31,10 +31,35 @@ highlight Directory term=bold cterm=bold ctermfg=4
 set shiftwidth=4    "Auto Indentation
 set tabstop=4       "Tab Count
 set expandtab       "Replace Tab to Space. Do Not With softtabstop
-" Only Use Tab in Makefile, *.mk, *.mak, *.dsp, *.min
+
+""""""""""".Only Use Tab in Makefile, *.mk, *.mak, *.dsp, *.min."""""""""""
 au BufNewFile,BufRead
     \ [mM]akefile,[mM]akefile*,GNUmakefile,*.mk,*.mak,*.dsp,*.min
     \ set noexpandtab
 
-"""""""""""""""""""""""""""".for Development."""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""".for ctags.""""""""""""""""""""""""""""
 set tags+=./tags
+
+""""""""""""""""""""""""""""".for cscope.""""""""""""""""""""""""""""
+set csprg=/usr/bin/cscope
+set nocsverb
+if filereadable("/home/src/cscope.out")
+    cs add "/home/src/cscope.out"
+endif
+set csverb
+set csto=0
+set cst
+
+func! Csc()
+    let csc = expand("<cword>")
+    new
+    exe "cs find c ".csc
+    if getline(1) == ""
+        exe "q!"
+    endif
+endfunc
+nmap ,csc :call Csc()<cr>
+
+"""""""""""""""""""""""""""".for Development."""""""""""""""""""""""""""""
+
+
