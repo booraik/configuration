@@ -1,5 +1,6 @@
 
-"""""""""""""""""""""""""""".Custon Section."""""""""""""""""""""""""""""""""
+"" added by booraik
+" Custon Section.
 set cindent         "C Style Auto Indentation
 set smartindent     "Smart Auto Indentation
 set autoindent      "Type open Brackets, close brackets automatically
@@ -14,33 +15,27 @@ set laststatus=2    "Set Status in Bottom
 set history=100     "Set max UNDO count
 set mousehide       "Set hide mouse when typing
 set ignorecase      "Ignore case when search string
-
-""""""""""""""""""""""""""""".for gVim.""""""""""""""""""""""""""""""
+" for gVim.
 "colors torte       "Set background color == dark
 "set nobk           "No create [~] backup file
 "set nobackup       "No create backup file
 "set noswapfile     "No create [.swp] backup file
-
-"""""""""""""""""""""""""".Change Text Color.""""""""""""""""""""""""""""""
+" Change Text Color.
 "set background=dark     "Set Background Color( Comment Color )
 highlight Comment term=bold cterm=bold ctermfg=4
 highlight SpecialKey term=bold cterm=bold ctermfg=4
 highlight Directory term=bold cterm=bold ctermfg=4
-
-"""""""""""""""""""""""""""""""".Tab Section."""""""""""""""""""""""""""""""""
+"Tab Section.
 set shiftwidth=4    "Auto Indentation
 set tabstop=4       "Tab Count
 set expandtab       "Replace Tab to Space. Do Not With softtabstop
-
-""""""""""".Only Use Tab in Makefile, *.mk, *.mak, *.dsp, *.min."""""""""""
+"Only Use Tab in Makefile, *.mk, *.mak, *.dsp, *.min.
 au BufNewFile,BufRead
     \ [mM]akefile,[mM]akefile*,GNUmakefile,*.mk,*.mak,*.dsp,*.min
     \ set noexpandtab
-
-""""""""""""""""""""""""""""".for ctags.""""""""""""""""""""""""""""
+"for ctags.
 set tags+=./tags
-
-""""""""""""""""""""""""""""".for cscope.""""""""""""""""""""""""""""
+"for cscope.
 set csprg=/usr/bin/cscope
 set nocsverb
 if filereadable("/home/src/cscope.out")
@@ -59,7 +54,6 @@ func! Csc()
     endif
 endfunc
 nmap ,csc :call Csc()<cr>
-
-"""""""""""""""""""""""""""".for Development."""""""""""""""""""""""""""""
+"for Development.
 
 
