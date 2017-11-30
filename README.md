@@ -12,10 +12,10 @@ default_os_conf.sh 실행 한번으로 기본 설정 가능
 단일 설정 변경은 각 설정파일 참조  
 
 *curl*
-> sh -c "$(curl -fsSL https://github.com/booraik/configuration/blob/master/default_os_conf.sh)"
+> sh -c "$(curl -fsSL https://raw.githubusercontent.com/booraik/configuration/master/default_os_conf.sh)"
 
 *wget*
-> sh -c "$(wget https://github.com/booraik/configuration/blob/master/default_os_conf.sh -0 -)"
+> sh -c "$(wget https://raw.githubusercontent.com/booraik/configuration/master/default_os_conf.sh -0 -)"
 
 * * *
 
