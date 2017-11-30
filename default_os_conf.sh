@@ -71,10 +71,10 @@ if [ $? -ne 0 ]; then
 fi
 
 ## 3. Write Configuration files
-cat profile >> /etc/profile
-cat vimrc >> /etc/vimrc
-cat zshrc >> ~/.zshrc
-cat tmux.conf >> /etc/tmux.conf
+curl https://raw.githubusercontent.com/booraik/configuration/master/profile >> /etc/profile
+curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc
+curl https://raw.githubusercontent.com/booraik/configuration/master/zshrc >> ~/.zshrc
+curl https://raw.githubusercontent.com/booraik/configuration/master/tmux.conf >> /etc/tmux.conf
 
 ## 4. Other config
 # zsh
