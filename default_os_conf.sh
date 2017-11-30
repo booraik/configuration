@@ -4,10 +4,10 @@
 ## 3. Write Configuration files
 ## 4. Other config
 
-OS=
-VER=
-ARCH=
-COMM_INSTALL=
+OS=""
+VER=""
+ARCH=""
+COMM_INSTALL=""
 
 ## 1. Check OS information
 ### Check OS Distribution & version
