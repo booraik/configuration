@@ -29,6 +29,9 @@ highlight Directory term=bold cterm=bold ctermfg=4
 set shiftwidth=4    "Auto Indentation
 set tabstop=4       "Tab Count
 set expandtab       "Replace Tab to Space. Do Not With softtabstop
+"Tab index is 2 for web content
+autocmd filetype html setlocal ts=2 sw=2 expandtab
+autocmd filetype javascript setlocal ts=2 sw=2 expandtab
 "Only Use Tab in Makefile, *.mk, *.mak, *.dsp, *.min.
 au BufNewFile,BufRead
     \ [mM]akefile,[mM]akefile*,GNUmakefile,*.mk,*.mak,*.dsp,*.min
