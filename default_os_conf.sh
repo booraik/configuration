@@ -61,7 +61,7 @@ if [ x$char == xn ] || [ x$char == xN ]; then
 fi
 
 ## 2. Install essential package
-$COMM_INSTALL vim-enhanced zsh tmux
+$COMM_INSTALL vim-enhanced zsh tmux git
 if [ $? -ne 0 ]; then
     exit
 fi
