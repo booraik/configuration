@@ -80,3 +80,4 @@ curl https://raw.githubusercontent.com/booraik/configuration/master/tmux.conf >>
 # zsh
 sed -e '0,/ZSH_THEME/ s/^#*/#/' -i /root/.zshrc
 sed -i '/^#.* export ZSH/s/^#//' /root/.zshrc
+cp /root/.zshrc /root/.zshenv
