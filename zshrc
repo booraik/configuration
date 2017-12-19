@@ -6,3 +6,5 @@ ZSH_THEME="random"
 set -o vi
 # enable reverse search in vi command line mode
 bindkey '^R' history-incremental-search-backward
+
+alias grep='grep --color=always'
