@@ -8,14 +8,14 @@ OS 설치 --> 패키지 설치 --> 환경설정 무한 반복
 
 목표
 ----
-default_os_conf.sh 실행 한번으로 기본 설정 가능  
+init_conf.sh 실행 한번으로 기본 설정 가능  
 단일 설정 변경은 각 설정파일 참조  
 
 *curl*
-> sh -c "$(curl -fsSL https://raw.githubusercontent.com/booraik/configuration/master/default_os_conf.sh)"
+> sh -c "$(curl -fsSL https://raw.githubusercontent.com/booraik/configuration/master/init_conf.sh)"
 
 *wget*
-> sh -c "$(wget https://raw.githubusercontent.com/booraik/configuration/master/default_os_conf.sh -0 -)"
+> sh -c "$(wget https://raw.githubusercontent.com/booraik/configuration/master/init_conf.sh -0 -)"
 
 * * *
 
