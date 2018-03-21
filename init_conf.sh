@@ -18,6 +18,9 @@ if [ -f /etc/os-release ]; then # freedesktop.org and systemd
 elif type lsb_release >/dev/null 2>&1; then # linuxbase.org
     OS=$(lsb_release -si)
     VER=$(lsb_release -sr)
+elif [ -f /etc/centos-release ]; then
+    OS=CentOS
+    VER=`cat /etc/centos-release | awk -F 'release ' '{print $2}' | cut -d ' ' -f 1`
 elif [ -f /etc/lsb-release ]; then # For some versions of Debian/Ubuntu without lsb_release command
     . /etc/lsb-release
     OS=$DISTRIB_ID
