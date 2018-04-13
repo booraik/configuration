@@ -11,3 +11,4 @@ bindkey '^R' history-incremental-search-backward
 alias grep_='grep --color=always'
 alias netstat_='netstat -nlp | grep -v ^unix'
 alias du_='du -hs * | sort -h'
+alias ls_='ls -lrtha'
