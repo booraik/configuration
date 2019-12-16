@@ -65,7 +65,7 @@ fi
 
 ## 2. Install essential package
 $COMM_INSTALL epel-release
-$COMM_INSTALL vim-enhanced zsh tmux git multitail net-tools nmap tcpdump
+$COMM_INSTALL vim-enhanced zsh tmux git net-tools nmap tcpdump
 #if [ $? -ne 0 ]; then
 #    exit
 #fi
