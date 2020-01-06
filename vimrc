@@ -47,6 +47,7 @@ endif
 set csverb
 set csto=0
 set cst
+set enc=utf8
 
 func! Csc()
     let csc = expand("<cword>")
