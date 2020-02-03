@@ -15,6 +15,7 @@ set laststatus=2    "Set Status in Bottom
 set history=100     "Set max UNDO count
 set mousehide       "Set hide mouse when typing
 set ignorecase      "Ignore case when search string
+set width=0
 " for gVim.
 "colors torte       "Set background color == dark
 "set nobk           "No create [~] backup file
