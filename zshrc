@@ -17,3 +17,10 @@ alias vi=vim
 # No share history
 setopt noincappendhistory
 setopt nosharehistory
+
+# for fzf
+function fzfv() {
+    fzf --preview '[[ $(file --mime {}) =~ binary ]] &&
+                 echo {} is a binary file ||
+                 (cat {}) 2> /dev/null | head -500'
+}

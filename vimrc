@@ -1,4 +1,3 @@
-
 "" added by booraik
 " Custon Section.
 set cindent         "C Style Auto Indentation

@@ -73,10 +73,13 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 if [ $? -ne 0 ]; then
     exit
 fi
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
 
 ## 3. Write Configuration files
 curl https://raw.githubusercontent.com/booraik/configuration/master/profile >> /etc/profile
 curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc
+curl https://raw.githubusercontent.com/booraik/configuration/master/.vimrc >> ~/.vimrc
 curl https://raw.githubusercontent.com/booraik/configuration/master/zshrc >> ~/.zshrc
 curl https://raw.githubusercontent.com/booraik/configuration/master/tmux.conf >> /etc/tmux.conf
 
@@ -85,3 +88,6 @@ curl https://raw.githubusercontent.com/booraik/configuration/master/tmux.conf >>
 sed -e '0,/ZSH_THEME/ s/^#*/#/' -i /root/.zshrc
 sed -i '/^#.* export ZSH/s/^#//' /root/.zshrc
 cp /root/.zshrc /root/.zshenv
+
+## 5. Install
+vim +PluginInstall +qall
