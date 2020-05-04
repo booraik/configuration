@@ -81,19 +81,21 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 curl https://raw.githubusercontent.com/booraik/configuration/master/zshrc >> ~/.zshrc
 cp /root/.zshrc /root/.zshenv
 
-## 4. vim
-vim +PluginInstall +qall
-curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc
-curl https://raw.githubusercontent.com/booraik/configuration/master/.vimrc >> ~/.vimrc
-
-## 5. Advanced install
+## 4. Fuzzy Finder
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
-## 4. Write Configuration files
+## 5. vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+
+curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc
+curl https://raw.githubusercontent.com/booraik/configuration/master/.vimrc >> ~/.vimrc
+vim +PluginInstall +qall
+
+
+## 6. Write Configuration files
 curl https://raw.githubusercontent.com/booraik/configuration/master/profile >> /etc/profile
 curl https://raw.githubusercontent.com/booraik/configuration/master/tmux.conf >> /etc/tmux.conf
 
-## 5. Other config
-# zsh
+## 7. Other config
 
