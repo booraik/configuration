@@ -65,29 +65,35 @@ fi
 
 ## 2. Install essential package
 $COMM_INSTALL epel-release
-$COMM_INSTALL vim-enhanced zsh tmux git net-tools nmap tcpdump
-#if [ $? -ne 0 ]; then
-#    exit
-#fi
+$COMM_INSTALL vim-enhanced tmux git net-tools nmap tcpdump
+
+## 3. Z shell
+$COMM_INSTALL zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 if [ $? -ne 0 ]; then
     exit
 fi
+sed -e '0,/ZSH_THEME/ s/^#*/#/' -i /root/.zshrc
+sed -i '/^#.* export ZSH/s/^#//' /root/.zshrc
+sed -i '/^plugins/d' /root/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+curl https://raw.githubusercontent.com/booraik/configuration/master/zshrc >> ~/.zshrc
+cp /root/.zshrc /root/.zshenv
+
+## 4. vim
+vim +PluginInstall +qall
+curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc
+curl https://raw.githubusercontent.com/booraik/configuration/master/.vimrc >> ~/.vimrc
+
+## 5. Advanced install
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
-## 3. Write Configuration files
+## 4. Write Configuration files
 curl https://raw.githubusercontent.com/booraik/configuration/master/profile >> /etc/profile
-curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc
-curl https://raw.githubusercontent.com/booraik/configuration/master/.vimrc >> ~/.vimrc
-curl https://raw.githubusercontent.com/booraik/configuration/master/zshrc >> ~/.zshrc
 curl https://raw.githubusercontent.com/booraik/configuration/master/tmux.conf >> /etc/tmux.conf
 
-## 4. Other config
+## 5. Other config
 # zsh
-sed -e '0,/ZSH_THEME/ s/^#*/#/' -i /root/.zshrc
-sed -i '/^#.* export ZSH/s/^#//' /root/.zshrc
-cp /root/.zshrc /root/.zshenv
 
-## 5. Install
-vim +PluginInstall +qall

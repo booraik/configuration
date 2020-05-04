@@ -24,3 +24,10 @@ function fzfv() {
                  echo {} is a binary file ||
                  (cat {}) 2> /dev/null | head -500'
 }
+
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-completions
+)
+
