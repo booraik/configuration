@@ -25,9 +25,13 @@ function fzfv() {
                  (cat {}) 2> /dev/null | head -500'
 }
 
+# for plugin
 plugins=(
   git
   zsh-autosuggestions
   zsh-completions
 )
 
+# for zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=6'
+bindkey '^ ' autosuggest-accept    # ctrl + space --> auto complete
