@@ -80,6 +80,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 curl https://raw.githubusercontent.com/booraik/configuration/master/zshrc >> ~/.zshrc
 cp /root/.zshrc /root/.zshenv
+chsh -s /bin/zsh root
 
 ## 4. Fuzzy Finder
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
