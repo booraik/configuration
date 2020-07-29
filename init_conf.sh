@@ -74,7 +74,7 @@ if [ $? -ne 0 ]; then
     exit
 fi
 sed -e '0,/ZSH_THEME/ s/^#*/#/' -i /root/.zshrc
-sed -i '/^#.* export ZSH/s/^#//' /root/.zshrc
+sed -i '/^#.*export ZSH/s/^#//' /root/.zshrc
 sed -i '/^plugins/d' /root/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
