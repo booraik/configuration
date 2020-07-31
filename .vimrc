@@ -1,3 +1,5 @@
+if exists(:Plugin)
+
 "" for ctags.
 set tags+=./tags
 
@@ -66,3 +68,4 @@ Plugin 'junegunn/fzf.vim'
 "let g:neocomplete#enable_smart_case = 1
 "let g:neocomplete#sources#syntax#min_keyword_length = 3
 
+endif
