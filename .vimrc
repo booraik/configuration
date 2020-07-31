@@ -1,4 +1,4 @@
-if exists(:Plugin)
+if exists(":Plugin")
 
 "" for ctags.
 set tags+=./tags
