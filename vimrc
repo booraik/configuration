@@ -27,6 +27,10 @@ set textwidth=0
 highlight Comment term=bold cterm=bold ctermfg=4
 highlight SpecialKey term=bold cterm=bold ctermfg=4
 highlight Directory term=bold cterm=bold ctermfg=4
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+set encoding=utf8
+set fileencodings=utf-8,cp949
 
 "Tab Section.
 set shiftwidth=4    "Auto Indentation
