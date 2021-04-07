@@ -1,29 +1,5 @@
 if exists(":Plugin")
 
-"" for ctags.
-set tags+=./tags
-
-"" for cscope.
-set csprg=/usr/bin/cscope
-set nocsverb
-if filereadable("/home/src/cscope.out")
-    cs add "/home/src/cscope.out"
-endif
-set csverb
-set csto=0
-set cst
-set enc=utf8
-
-func! Csc()
-    let csc = expand("<cword>")
-    new
-    exe "cs find c ".csc
-    if getline(1) == ""
-        exe "q!"
-    endif
-endfunc
-nmap ,csc :call Csc()<cr>
-
 "" for Development.
 """ for Vundle
 set nocompatible              " be iMproved, required
@@ -69,3 +45,32 @@ Plugin 'junegunn/fzf.vim'
 "let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 endif
+
+""" .for cscope
+set csprg=/usr/bin/cscope
+set nocsverb
+if filereadable("/home/src/cscope.out")
+    cs add "/home/src/cscope.out"
+endif
+set csverb
+set csto=0
+set cst
+
+func! Csc()
+    let csc = expand("<cword>")
+    new
+    exe "cs find c ".csc
+    if getline(1) == ""
+        exe "q!"
+    endif
+endfunc
+nmap ,csc :call Csc()<cr>
+
+func! Csc()
+    let csc = expand("<cword>")
+    exe "cs find e ".csc
+endfunc
+nmap ,cse :call Csc()<cr>
+
+""" for ctags.
+set tags+=./tags
