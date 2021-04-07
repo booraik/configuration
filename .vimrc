@@ -49,12 +49,13 @@ endif
 """ .for cscope
 set csprg=/usr/bin/cscope
 set nocsverb
-if filereadable("/home/src/cscope.out")
-    cs add "/home/src/cscope.out"
-endif
 set csverb
 set csto=0
 set cst
+
+if filereadable("/home/src/cscope.out")
+    cs add "/home/src/cscope.out"
+endif
 
 func! Csc()
     let csc = expand("<cword>")
