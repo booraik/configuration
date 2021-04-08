@@ -52,6 +52,7 @@ set nocsverb
 set csverb
 set csto=0
 set cst
+set nocscopeverbose
 
 if filereadable("/home/src/cscope.out")
     cs add "/home/src/cscope.out"
