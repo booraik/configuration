@@ -55,24 +55,24 @@ set cst
 set nocscopeverbose
 
 if filereadable("/home/src/cscope.out")
-    cs add "/home/src/cscope.out"
+    cs add /home/src/cscope.out
 endif
 
 func! Csc()
-    let csc = expand("<cword>")
+    let name = expand("<cword>")
     new
-    exe "cs find c ".csc
+    exe "cs find c ".name
     if getline(1) == ""
         exe "q!"
     endif
 endfunc
 nmap ,csc :call Csc()<cr>
 
-func! Csc()
-    let csc = expand("<cword>")
-    exe "cs find e ".csc
+func! Cse()
+    let name = expand("<cword>")
+    exe "cs find e ".name
 endfunc
-nmap ,cse :call Csc()<cr>
+nmap ,cse :call Cse()<cr>
 
 """ for ctags.
 set tags+=./tags
