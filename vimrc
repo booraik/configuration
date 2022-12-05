@@ -30,7 +30,7 @@ highlight Directory term=bold cterm=bold ctermfg=4
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 set encoding=utf8
-set fileencodings=ansi,utf-8,cp949,utf-16le
+set fileencodings=utf-8,cp949,utf-16le,ansi
 if has("gui_running")
   set guifont=Consolas:h12:cANSI:qDRAFT  
 endif
