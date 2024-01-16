@@ -49,12 +49,6 @@ i*86)
     # leave ARCH as-is
     ;;
 esac
-### Check install command
-case "$OS" in 
-*CENTOS* | *REDHAT*)
-    COMM_INSTALL="yum install -y"
-    ;;
-esac
 
 echo "OS Information : [$OS] [$VER] [$ARCH]"
 read -p "Is Right? n/N to exit " char
@@ -63,9 +57,21 @@ if [ x$char == xn ] || [ x$char == xN ]; then
     exit
 fi
 
+### Check install command
+case "$OS" in 
+*CENTOS* | *REDHAT*)
+    COMM_INSTALL="yum install -y"
+    yum -y update
+    ;;
+*UBUNTU*)
+    COMM_INSTALL="apt install -y"
+    apt-get -y update
+    ;;
+esac
+
 ## 2. Install essential package
 $COMM_INSTALL epel-release
-$COMM_INSTALL vim-enhanced tmux git net-tools nmap tcpdump
+$COMM_INSTALL vim vim-enhanced tmux git net-tools nmap tcpdump
 
 ## 3. Z shell
 $COMM_INSTALL zsh
@@ -89,8 +95,10 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ## 5. vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 
-curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc
-curl https://raw.githubusercontent.com/booraik/configuration/master/.vimrc >> ~/.vimrc
+curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc	# for centos
+cat etc/vimrc >> /etc/vim/vimrc	# for ubuntu
+curl https://raw.githubusercontent.com/booraik/configuration/master/.vimrc >> ~/.vimrc  # for current user
+cp ~/.vimrc /etc/skel/          # for new user
 vim +PluginInstall +qall
 
 
