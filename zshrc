@@ -10,8 +10,6 @@ bindkey '^R' history-incremental-search-backward
 # alias for convenience. custom alias has "_" suffix
 alias grep_='grep --color=always'
 alias netstat_='netstat -nlp | grep -v ^unix'
-function du_() {'du -hs $1* | sort -h'}
-alias ls_='ls -lrtha'
 alias vi=vim
 
 # No share history
