@@ -96,7 +96,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 
 curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vimrc	# for centos
-cat etc/vimrc >> /etc/vim/vimrc	# for ubuntu
+curl https://raw.githubusercontent.com/booraik/configuration/master/vimrc >> /etc/vim/vimrc	# for ubuntu
 curl https://raw.githubusercontent.com/booraik/configuration/master/.vimrc >> ~/.vimrc  # for current user
 cp ~/.vimrc /etc/skel/          # for new user
 vim +PluginInstall +qall
