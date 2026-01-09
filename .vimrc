@@ -8,16 +8,11 @@ if filereadable(expand("~/.vim/bundle/Vundle.vim/README.md"))
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     Plugin 'preservim/nerdtree'
-    Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'machakann/vim-highlightedyank'
     call vundle#end()            " required
-    filetype plugin indent on    " required
 
     " for NERDTree
     map <C-n> :NERDTreeToggle<CR>
-
-    " for vim-indent-guides
-    let g:indent_guides_enable_on_vim_startup = 1
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 endif
